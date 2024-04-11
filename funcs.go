@@ -29,7 +29,7 @@ func Abs(v any) any {
 	case uint, uint8, uint16, uint32, uint64, uintptr:
 		return a
 	default:
-		panic(a)
+		return nil //unnecessary to panic
 	}
 }
 
@@ -45,6 +45,8 @@ func Bool(b any) bool {
 		return a != 0
 	case interface{ Bool() bool }:
 		return a.Bool()
+	case unsafe.Pointer:
+		return uintptr(a) != 0
 	default:
 		return a != nil
 	}

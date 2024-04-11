@@ -1,4 +1,4 @@
-package main
+package comp
 
 type SignedIntegerType interface {
 	~int8 | ~int16 | ~int32 | ~int64 | ~int

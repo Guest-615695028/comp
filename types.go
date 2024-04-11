@@ -9,4 +9,5 @@ type Real interface{ Int | Float }
 type Arithmetic interface{ Int | Float | Complex }
 type Ordered interface{ Int | Float | ~string }
 type Booler interface{ Bool() bool }
+type Stringer interface{ String() string }
 type BooleanTestible interface{ ~bool | ~string | Arithmetic }

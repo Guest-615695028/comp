@@ -9,7 +9,7 @@ func ValueJSON(v any, err error) string {
 	case nil:
 		return "null"
 	case bool:
-		return Cond(w, "true", "false")
+		return Cond(w, "true", "false").(string)
 	case int64:
 		return strconv.FormatInt(w, 10)
 	case int32:

@@ -29,7 +29,7 @@ func Abs(v any) any {
 	case uint, uint8, uint16, uint32, uint64, uintptr:
 		return a
 	default:
-		return nil //unnecessary to panic
+		return v //unnecessary to panic
 	}
 }
 

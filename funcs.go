@@ -9,7 +9,7 @@ import (
 func Abs(v any) any {
 	switch a := v.(type) {
 	case complex64:
-		return cmplx.Abs(complex128(a))
+		return complex64(cmplx.Abs(complex128(a)))
 	case complex128:
 		return cmplx.Abs(a)
 	case int:
@@ -23,7 +23,7 @@ func Abs(v any) any {
 	case int64:
 		return Cond(a < 0, -a, a)
 	case float32:
-		return math.Abs(float64(a))
+		return float32(math.Abs(float64(a)))
 	case float64:
 		return math.Abs(a)
 	case uint, uint8, uint16, uint32, uint64, uintptr:
